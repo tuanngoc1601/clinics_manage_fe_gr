@@ -6,8 +6,11 @@ module.exports = {
   theme: {
     extend: {
       width: {
+        26: "26px",
+        50: "50px",
         150: "150px",
         190: "190px",
+        200: "200px",
         225: "225px",
         275: "275px",
         300: "300px",
@@ -20,8 +23,12 @@ module.exports = {
         508: "508px",
       },
       height: {
+        26: "26px",
+        50: "50px",
+        78: "78px",
         80: "80px",
         150: "150px",
+        200: "200px",
         225: "225px",
         300: "300px",
         340: "340px",
@@ -47,11 +54,16 @@ module.exports = {
         "2xl": "1536px",
       },
       colors: {
+        textBar: "#969495",
+        textNav: "#111111",
+        textPlaceholder: "#999999",
+        textBorder: "#dddddd",
+        textPrimary: "#45c3d2",
         navActive: "#B511B8",
         headingColor: "#2e2e2e",
         textColor: "#515151",
         cartNumBg: "#e80013",
-        primary: "#f5f3f3",
+        primary: "#EDFFFA",
         cardOverlay: "rgba(256,256,256,0.4)",
         lighttextGray: "#9ca0ab",
         card: "rgba(256,256,256,0.8)",
