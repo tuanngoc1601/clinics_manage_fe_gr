@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { specialists } from "../../../utils/specialist";
 import "swiper/css";
@@ -13,7 +14,9 @@ const Specialist = () => {
                 <h3 className="text-2xl font-semibold text-start text-headingColor">
                     Chuyên khoa
                 </h3>
-                <DetailButton />
+                <Link to={"/services/specialists"}>
+                    <DetailButton />
+                </Link>
             </div>
             <SpecialistFields />
         </div>

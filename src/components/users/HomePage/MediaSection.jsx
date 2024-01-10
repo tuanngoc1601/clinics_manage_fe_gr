@@ -22,7 +22,7 @@ const MediaSection = () => {
                         height="332"
                         src="https://www.youtube.com/embed/FyDQljKtWnI?si=Tg9WmGy0VQon1CBi"
                         title="CÀ PHÊ KHỞI NGHIỆP VTV1 - BOOKINGCARE - HỆ THỐNG ĐẶT LỊCH KHÁM TRỰC TUYẾN"
-                        frameborder="0"
+                        frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen
                         className="rounded-2xl"

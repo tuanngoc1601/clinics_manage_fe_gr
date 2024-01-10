@@ -3,6 +3,9 @@ import { Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import HomePage from "./pages/users/HomePage";
+import SpecialistPage from "./pages/users/SpecialistPage";
+import SpecialistDetail from "./pages/users/SpecialistDetail";
+import Booking from "./pages/users/Booking";
 
 function App() {
     return (
@@ -10,7 +13,16 @@ function App() {
             <Routes>
                 <Route path="/login" element={<Login />} />
                 <Route path="/sign-up" element={<SignUp />} />
-                <Route path="/" element={<HomePage />} />
+                <Route exact path="/" element={<HomePage />} />
+                <Route
+                    path="/services/specialists"
+                    element={<SpecialistPage />}
+                />
+                <Route
+                    path="/services/specialists/:specialistId"
+                    element={<SpecialistDetail />}
+                />
+                <Route path="/bookings/:bookingId" element={<Booking />} />
             </Routes>
         </div>
     );
