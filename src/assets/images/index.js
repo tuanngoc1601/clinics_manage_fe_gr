@@ -12,3 +12,7 @@ export { default as BoYTe } from "./media/cuc-cong-nghe-thong-tin-bo-y-te.png";
 export { default as Dantri } from "./media/dantrilogo.png";
 export { default as vtcNews } from "./media/vtcnewslogo.png";
 export { default as InfoNet } from "./media/infonet.png";
+export { default as BoCongThuong } from "./bo-cong-thuong.png";
+export { default as DoctorLogo } from "./hellodoctorlogo.png";
+export { default as BernardLogo } from "./logo-bernard.png";
+export { default as DoctorCheck } from "./doctor-check.png";

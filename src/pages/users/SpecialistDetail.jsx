@@ -15,7 +15,9 @@ const SpecialistDetail = () => {
                         <IoMdHome className="text-textPrimary text-xl" />
                     </Link>
                     <span className="text-textPrimary">/</span>
-                    <span className="text-sm">Khám Chuyên khoa</span>
+                    <Link to={"/services/specialists"}>
+                        <span className="text-sm text-textPrimary">Khám Chuyên khoa</span>
+                    </Link>
                 </div>
                 <h3 className="text-xl px-2 font-semibold text-headingColor">
                     Cơ Xương Khớp

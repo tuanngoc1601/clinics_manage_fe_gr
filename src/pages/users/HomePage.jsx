@@ -10,6 +10,7 @@ import MentalHealth from "../../components/users/HomePage/MentalHealth";
 import QuestionAnswer from "../../components/users/HomePage/QuestionAnswer";
 import Handbook from "../../components/users/HomePage/Handbook";
 import MediaSection from "../../components/users/HomePage/MediaSection";
+import Footer from "../../components/footer/Footer";
 
 const HomePage = () => {
     return (
@@ -25,6 +26,7 @@ const HomePage = () => {
             <QuestionAnswer />
             <Handbook />
             <MediaSection />
+            <Footer />
         </main>
     );
 };

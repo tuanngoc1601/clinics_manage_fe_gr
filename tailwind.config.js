@@ -65,6 +65,7 @@ module.exports = {
       fontSize: {
         '10px': "10px",
         '13px': "13px",
+        '15px': "15px",
       },
       colors: {
         textBar: "#969495",
@@ -73,6 +74,8 @@ module.exports = {
         textAddress: "#666666",
         textBorder: "#dddddd",
         bgTimeSchedule: "#eeeeee",
+        bgFooter: "#efefef",
+        bgFooterMedia: "#64b9e5",
         bgDoctorBooking: "#f6f6f6",
         bgNote: "#D4EFFC",
         bgButtonBooking: "#ffc419",
