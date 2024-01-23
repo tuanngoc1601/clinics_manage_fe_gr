@@ -1,6 +1,7 @@
 import axios from "axios";
-import jwt_decode from "jwt-decode";
+import { jwtDecode } from "jwt-decode";
 import { store } from "./redux/store";
+import { refreshUserSuccess } from "./redux/authSlice";
 
 export const createAxiosBaseUrl = () => {
     return axios.create({
@@ -11,7 +12,7 @@ export const createAxiosBaseUrl = () => {
 
 const checkIfTokenExpired = (accessToken) => {
     const date = new Date();
-    const decodeToken = jwt_decode(accessToken);
+    const decodeToken = jwtDecode(accessToken);
     if (decodeToken.exp < date.getTime() / 1000) {
         return true;
     }
@@ -27,7 +28,7 @@ const refreshToken = async () => {
     }
 };
 
-export const createAxiosClient = (stateSuccess) => {
+export const createAxiosClient = () => {
     const instance = createAxiosBaseUrl();
     instance.interceptors.request.use(
         async (config) => {
@@ -42,7 +43,7 @@ export const createAxiosClient = (stateSuccess) => {
                             ...user,
                             accessToken: data.accessToken,
                         };
-                        store.dispatch(stateSuccess(refreshUser));
+                        store.dispatch(refreshUserSuccess(refreshUser));
                         accessToken = refreshUser.accessToken;
                     } catch (error) {
                         console.error("Failed to refresh access token:", error);

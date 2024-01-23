@@ -97,6 +97,7 @@ module.exports = {
         'bgSection': "url('/src/assets/images/background/bg-section.png')",
         'bgMentalHealth': "url('/src/assets/images/background/bg-health.png')",
         'bgMedia': "url('/src/assets/images/background/bg-media.png')",
+        'bgLogin': "url('/src/assets/images/background/bg-login.jpeg')",
       }
     },
   },
