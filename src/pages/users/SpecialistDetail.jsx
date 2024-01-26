@@ -5,7 +5,7 @@ import Schedule from "../../components/users/Schedule";
 import { IoMdHome } from "react-icons/io";
 
 const SpecialistDetail = () => {
-    const specialistId = useParams();
+    const specialityId = useParams();
     return (
         <main className="w-full min-h-screen flex flex-col justify-start items-center bg-white">
             <Header />
@@ -15,7 +15,7 @@ const SpecialistDetail = () => {
                         <IoMdHome className="text-textPrimary text-xl" />
                     </Link>
                     <span className="text-textPrimary">/</span>
-                    <Link to={"/services/specialists"}>
+                    <Link to={"/services/specialities"}>
                         <span className="text-sm text-textPrimary">Khám Chuyên khoa</span>
                     </Link>
                 </div>

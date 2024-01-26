@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { specialityRequestApi } from "../../redux/requests";
 import Header from "../../components/header/Header";
 import Slider from "../../components/users/Slider";
 import ServiceSection from "../../components/users/HomePage/ServiceSection";
-import Specialist from "../../components/users/HomePage/Specialist";
+import SpecialitiesList from "../../components/users/HomePage/SpecialitiesList";
 import HealthFacilities from "../../components/users/HomePage/HealthFacilities";
 import OutstandingDoctor from "../../components/users/HomePage/OutstandingDoctor";
 import TelehealthSection from "../../components/users/HomePage/TelehealthSection";
@@ -13,12 +15,17 @@ import MediaSection from "../../components/users/HomePage/MediaSection";
 import Footer from "../../components/footer/Footer";
 
 const HomePage = () => {
+    const dispatch = useDispatch();
+    useEffect(() => {
+        specialityRequestApi.getAllSpecialities(dispatch);
+    }, []);
+
     return (
         <main className="w-full min-h-screen flex flex-col justify-start items-center bg-white">
             <Header />
             <Slider />
             <ServiceSection />
-            <Specialist />
+            <SpecialitiesList />
             <HealthFacilities />
             <OutstandingDoctor />
             <TelehealthSection />

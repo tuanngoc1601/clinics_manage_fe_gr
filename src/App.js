@@ -15,11 +15,11 @@ function App() {
                 <Route path="/sign-up" element={<SignUp />} />
                 <Route exact path="/" element={<HomePage />} />
                 <Route
-                    path="/services/specialists"
+                    path="/services/specialities"
                     element={<SpecialistPage />}
                 />
                 <Route
-                    path="/services/specialists/:specialistId"
+                    path="/services/specialities/:specialityId"
                     element={<SpecialistDetail />}
                 />
                 <Route path="/bookings/:bookingId" element={<Booking />} />
