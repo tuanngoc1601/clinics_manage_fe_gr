@@ -7,7 +7,9 @@ import Footer from "../../components/footer/Footer";
 import { IoMdHome } from "react-icons/io";
 
 const SpecialistPage = () => {
-    const specialities = useSelector((state) => state.speciality.specialities.data);
+    const specialities = useSelector(
+        (state) => state.speciality.specialities.data
+    );
     const dispatch = useDispatch();
 
     useEffect(() => {

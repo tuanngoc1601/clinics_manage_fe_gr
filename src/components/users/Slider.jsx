@@ -22,7 +22,7 @@ const Slider = () => {
                         clickable: true,
                         dynamicBullets: true,
                     }}
-                    navigation={true}
+                    navigation={false}
                     modules={[Autoplay, Pagination, Navigation]}
                     className="w-full h-full"
                 >

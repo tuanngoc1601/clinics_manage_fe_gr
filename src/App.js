@@ -4,6 +4,7 @@ import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import HomePage from "./pages/users/HomePage";
 import SpecialistPage from "./pages/users/SpecialistPage";
+import ClinicsPage from "./pages/users/ClinicsPage";
 import SpecialistDetail from "./pages/users/SpecialistDetail";
 import Booking from "./pages/users/Booking";
 
@@ -18,6 +19,7 @@ function App() {
                     path="/services/specialities"
                     element={<SpecialistPage />}
                 />
+                <Route path="/clinics" element={<ClinicsPage />} />
                 <Route
                     path="/services/specialities/:specialityId"
                     element={<SpecialistDetail />}

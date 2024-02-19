@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { specialityRequestApi } from "../../redux/requests";
+import { clinicRequestApi, specialityRequestApi } from "../../redux/requests";
 import Header from "../../components/header/Header";
 import Slider from "../../components/users/Slider";
 import ServiceSection from "../../components/users/HomePage/ServiceSection";
@@ -18,6 +18,7 @@ const HomePage = () => {
     const dispatch = useDispatch();
     useEffect(() => {
         specialityRequestApi.getAllSpecialities(dispatch);
+        clinicRequestApi.getAllClinics(dispatch);
     }, []);
 
     return (
