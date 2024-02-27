@@ -14,7 +14,7 @@ const HealthFacilities = () => {
                 <h3 className="text-2xl font-semibold text-start text-headingColor">
                     Cơ sở y tế
                 </h3>
-                <Link to={'/clinics'}>
+                <Link to={"/clinics"}>
                     <DetailButton />
                 </Link>
             </div>
@@ -38,16 +38,18 @@ const FacilitiesSwiper = () => {
                 {allClinics &&
                     allClinics.map((clinic, index) => (
                         <SwiperSlide key={index}>
-                            <div className="w-full h-full flex flex-col rounded-2xl border-2 border-boderItem cursor-pointer p-4">
-                                <img
-                                    src={clinic.avatar}
-                                    alt=""
-                                    className="w-full h-158 block object-contain rounded-3xl"
-                                />
-                                <div className="h-16 flex items-center text-center justify-center text-lg text-headingColor font-semibold mt-5 mb-4">
-                                    {clinic.name}
+                            <Link to={`/clinics/${clinic.id}`}>
+                                <div className="w-full h-full flex flex-col rounded-2xl border-2 border-boderItem cursor-pointer p-4">
+                                    <img
+                                        src={clinic.avatar}
+                                        alt=""
+                                        className="w-full h-158 block object-contain rounded-3xl"
+                                    />
+                                    <div className="h-16 flex items-center text-center justify-center text-lg text-headingColor font-semibold mt-5 mb-4">
+                                        {clinic.name}
+                                    </div>
                                 </div>
-                            </div>
+                            </Link>
                         </SwiperSlide>
                     ))}
             </Swiper>

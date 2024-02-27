@@ -5,6 +5,7 @@ import SignUp from "./pages/SignUp";
 import HomePage from "./pages/users/HomePage";
 import SpecialistPage from "./pages/users/SpecialistPage";
 import ClinicsPage from "./pages/users/ClinicsPage";
+import ClinicDetail from "./pages/users/ClinicDetail";
 import SpecialistDetail from "./pages/users/SpecialistDetail";
 import Booking from "./pages/users/Booking";
 
@@ -19,7 +20,8 @@ function App() {
                     path="/services/specialities"
                     element={<SpecialistPage />}
                 />
-                <Route path="/clinics" element={<ClinicsPage />} />
+                <Route exact path="/clinics" element={<ClinicsPage />} />
+                <Route path="/clinics/:clinicId" element={<ClinicDetail />} />
                 <Route
                     path="/services/specialities/:specialityId"
                     element={<SpecialistDetail />}

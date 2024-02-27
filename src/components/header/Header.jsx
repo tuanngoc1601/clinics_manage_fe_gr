@@ -42,7 +42,7 @@ const Header = () => {
                                     <p className="text-10px text-textColor font-normal">Tìm bác sĩ theo chuyên khoa</p>
                                 </div>
                             </Link>
-                            <Link>
+                            <Link to={"/clinics"}>
                                 <div className="flex flex-col">
                                     <p className="text-xs text-textColor font-bold">Cơ sở y tế</p>
                                     <p className="text-10px text-textColor font-normal">Chọn bệnh viện phòng khám</p>

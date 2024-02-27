@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const ClinicsSectionKey = ({ keyWord, clinicsArr }) => {
     return (
@@ -8,15 +9,17 @@ const ClinicsSectionKey = ({ keyWord, clinicsArr }) => {
             </div>
             <div className="w-full flex flex-row flex-wrap pt-6 mt-4">
                 {clinicsArr.map((clinic, index) => (
-                    <div key={index} className="w-24 flex flex-col px-2.5">
-                        <img
-                            src={clinic.avatar}
-                            alt=""
-                            className="w-full h-150 block border-2 rounded-md object-contain p-2.5"
-                        />
-                        <div className="flex items-center text-center justify-center text-md text-headingColor font-semibold my-4">
-                            {clinic.name}
-                        </div>
+                    <div key={index} className="w-24 flex flex-col cursor-pointer px-2.5">
+                        <Link to={`/clinics/${clinic.id}`}>
+                            <img
+                                src={clinic.avatar}
+                                alt=""
+                                className="w-full h-150 block border-2 rounded-md object-contain p-2.5"
+                            />
+                            <div className="flex items-center text-center justify-center text-md text-headingColor font-semibold my-4">
+                                {clinic.name}
+                            </div>
+                        </Link>
                     </div>
                 ))}
             </div>
