@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { clinicRequestApi, specialityRequestApi } from "../../redux/requests";
-import Header from "../../components/header/Header";
+// import Header from "../../components/header/Header";
 import Slider from "../../components/users/Slider";
 import ServiceSection from "../../components/users/HomePage/ServiceSection";
 import SpecialitiesList from "../../components/users/HomePage/SpecialitiesList";
@@ -23,7 +23,7 @@ const HomePage = () => {
 
     return (
         <main className="w-full min-h-screen flex flex-col justify-start items-center bg-white">
-            <Header />
+            {/* <Header /> */}
             <Slider />
             <ServiceSection />
             <SpecialitiesList />

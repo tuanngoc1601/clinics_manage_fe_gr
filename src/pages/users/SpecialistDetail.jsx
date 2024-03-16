@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
-import Header from "../../components/header/Header";
+// import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import Schedule from "../../components/users/Schedule";
 import { IoMdHome } from "react-icons/io";
@@ -9,7 +9,7 @@ const SpecialistDetail = () => {
     const specialityId = useParams();
     return (
         <main className="w-full min-h-screen flex flex-col justify-start items-center bg-white">
-            <Header />
+            {/* <Header /> */}
             <div className="w-full px-10">
                 <div className="flex items-center justify-start gap-x-2 my-4 px-2">
                     <Link to={"/"}>

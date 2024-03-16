@@ -4,24 +4,29 @@ import ReactMakedown from "../../containers/ReactMakedown";
 import { IoLocationSharp } from "react-icons/io5";
 import { AiOutlineSchedule } from "react-icons/ai";
 import { FaChevronDown, FaRegHandPointer } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const Schedule = (props) => {
     return (
         <div className="w-full p-2 flex flex-row divide-x border bg-white shadow-lg rounded-xl py-4">
             <div className="w-1/2 flex flex-row py-2">
-                <img
-                    src={
-                        props?.doctor?.image ??
-                        "https://cdn.bookingcare.vn/fo/w256/2021/06/15/152136-bs-tri.jpg"
-                    }
-                    alt=""
-                    className="w-20 h-20 rounded-full object-cover"
-                />
+                <Link to={`/doctors/${props?.id}`}>
+                    <img
+                        src={
+                            props?.doctor?.image ??
+                            "https://cdn.bookingcare.vn/fo/w256/2021/06/15/152136-bs-tri.jpg"
+                        }
+                        alt=""
+                        className="w-20 h-20 rounded-full object-cover"
+                    />
+                </Link>
                 <div className="px-4 text-sm text-textAddress leading-6">
-                    <h3 className="text-lg text-textPrimary font-semibold">
-                        {props?.doctor?.name ??
-                            "Thạc sĩ, Bác sĩ Chuyên khoa II Dương Minh Trí"}
-                    </h3>
+                    <Link to={`/doctors/${props?.id}`}>
+                        <h3 className="text-lg text-textPrimary font-semibold">
+                            {props?.doctor?.name ??
+                                "Thạc sĩ, Bác sĩ Chuyên khoa II Dương Minh Trí"}
+                        </h3>
+                    </Link>
                     {<ReactMakedown content={props?.doctor?.description} /> ?? (
                         <>
                             <p className="text-sm leading-6">

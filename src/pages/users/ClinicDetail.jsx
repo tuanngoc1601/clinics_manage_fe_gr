@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { clinicService } from "../../services";
 import ReactMakedown from "../../containers/ReactMakedown";
-import Header from "../../components/header/Header";
+// import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import Schedule from "../../components/users/Schedule";
 
@@ -25,11 +25,9 @@ const ClinicDetail = () => {
         getDataClinic();
     }, []);
 
-    console.log(clinicDetail);
-
     return (
         <main className="w-full min-h-screen flex flex-col justify-start items-center bg-white">
-            <Header />
+            {/* <Header /> */}
             <div
                 style={{ "--image-url": `url(${clinicDetail?.image})` }}
                 className="w-full h-340 bg-[image:var(--image-url)] bg-cover bg-center bg-no-repeat relative"
@@ -78,7 +76,7 @@ const ClinicDetail = () => {
                     - phòng khám uy tín, hơn 1,500 bác sĩ chuyên khoa giỏi và
                     hàng nghìn dịch vụ, sản phẩm y tế chất lượng cao.
                 </div>
-                <div className="px-5 text-base bg-bgIntroduction mt-4 clinic-detail">
+                <div className="px-5 text-base bg-bgIntroduction mt-4 markdown">
                     <ReactMakedown content={clinicDetail?.description} />
                 </div>
                 {clinicDetail?.Doctors && clinicDetail?.Doctors.length > 0 && (
@@ -86,6 +84,7 @@ const ClinicDetail = () => {
                         {clinicDetail.Doctors.map((item, index) => (
                             <Schedule
                                 key={index}
+                                id={item.id}
                                 doctor={item}
                                 clinicName={clinicDetail?.name}
                                 clinicAddress={clinicDetail?.address}
@@ -94,7 +93,7 @@ const ClinicDetail = () => {
                     </div>
                 )}
                 {clinicDetail?.introduction && (
-                    <div className="mt-10 clinic-detail">
+                    <div className="mt-10 markdown">
                         <h3 className="uppercase text-lg font-semibold text-textDate">
                             Giới thiệu chung
                         </h3>
@@ -106,7 +105,7 @@ const ClinicDetail = () => {
                     </div>
                 )}
                 {clinicDetail?.technique && (
-                    <div className="text-lg mt-10 clinic-detail">
+                    <div className="text-lg mt-10 markdown">
                         <h3 className="uppercase text-lg font-semibold text-textDate">
                             Thế mạnh chuyên môn
                         </h3>
@@ -116,7 +115,7 @@ const ClinicDetail = () => {
                     </div>
                 )}
                 {clinicDetail?.equipment && (
-                    <div className="text-lg mt-10 clinic-detail">
+                    <div className="text-lg mt-10 markdown">
                         <h3 className="uppercase text-lg font-semibold text-textDate">
                             Trang thiết bị
                         </h3>
@@ -126,7 +125,7 @@ const ClinicDetail = () => {
                     </div>
                 )}
                 {clinicDetail?.location && (
-                    <div className="text-lg my-10 clinic-detail">
+                    <div className="text-lg my-10 markdown">
                         <h3 className="uppercase text-lg font-semibold text-textDate">
                             Vị trí
                         </h3>

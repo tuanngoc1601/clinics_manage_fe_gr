@@ -1,12 +1,12 @@
 import React from "react";
-import Header from "../../components/header/Header";
+// import Header from "../../components/header/Header";
 import FooterBooking from "../../components/footer/FooterBooking";
 import BookingForm from "../../components/users/Booking/BookingForm";
 
 const Booking = () => {
     return (
         <main className="w-full min-h-screen flex flex-col justify-start items-center bg-white">
-            <Header />
+            {/* <Header /> */}
             <div className="w-full bg-bgDoctorBooking py-5 px-4">
                 <div className="w-1/2 flex flex-row items-start justify-start mx-auto">
                     <img

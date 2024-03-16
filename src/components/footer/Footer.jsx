@@ -14,7 +14,7 @@ import { ImMobile } from "react-icons/im";
 
 const Footer = () => {
     return (
-        <footer className="w-full mt-10">
+        <footer className="w-full">
             <div className="flex flex-col divide-y px-12 py-8 divide-slate-300 bg-bgFooter">
                 <div className="flex flex-row pb-4">
                     <div className="w-2/5">

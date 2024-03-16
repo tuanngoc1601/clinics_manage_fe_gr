@@ -22,7 +22,7 @@ code {
     monospace;
 }
 
-.clinic-detail p {
+.markdown p {
   display: block;
   margin-block-start: 1em;
   margin-block-end: 1em;
@@ -31,7 +31,7 @@ code {
   margin: 16px 0 10px;
 }
 
-.clinic-detail ul {
+.markdown ul {
   list-style-type: disc;
   display: block;
   margin-block-start: 1em;
@@ -41,7 +41,7 @@ code {
   padding-inline-start: 40px;
 }
 
-.clinic-detail li {
+.markdown li {
   display: list-item;
   text-align: -webkit-match-parent;
   margin-bottom: 10px;

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { specialityRequestApi } from "../../redux/requests";
-import Header from "../../components/header/Header";
+// import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import { IoMdHome } from "react-icons/io";
 
@@ -18,7 +18,7 @@ const SpecialistPage = () => {
 
     return (
         <main className="w-full min-h-screen flex flex-col justify-start items-center bg-white">
-            <Header />
+            {/* <Header /> */}
             <div className="w-full px-10 divide-y">
                 <div className="flex items-center justify-start gap-x-2 my-4 px-2">
                     <Link to={"/"}>
