@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
 import Header from "../../components/header/Header";
+import Footer from "../../components/footer/Footer";
 import Schedule from "../../components/users/Schedule";
 import { IoMdHome } from "react-icons/io";
 
@@ -30,6 +31,7 @@ const SpecialistDetail = () => {
                     <Schedule />
                 </div>
             </div>
+            <Footer />
         </main>
     );
 };

@@ -176,7 +176,7 @@ const Footer = () => {
                             viewBox="0 0 250 250"
                             preserveAspectRatio="none"
                         >
-                            <g fill-rule="evenodd" clip-rule="evenodd">
+                            <g fillRule="evenodd" clipRule="evenodd">
                                 <path
                                     fill="#010101"
                                     d="M25 0h200c13.808 0 25 11.192 25 25v200c0 13.808-11.192 25-25 25H25c-13.808 0-25-11.192-25-25V25C0 11.192 11.192 0 25 0"

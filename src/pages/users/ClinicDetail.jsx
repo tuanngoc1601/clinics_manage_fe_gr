@@ -4,6 +4,7 @@ import { clinicService } from "../../services";
 import ReactMakedown from "../../containers/ReactMakedown";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
+import Schedule from "../../components/users/Schedule";
 
 const ClinicDetail = () => {
     const { clinicId } = useParams();
@@ -70,48 +71,70 @@ const ClinicDetail = () => {
                     </div>
                 </div>
             </div>
-            <div className="w-11/12 flex flex-col mt-24 clinic-detail">
+            <div className="w-11/12 flex flex-col mt-24">
                 <div className="bg-bgIntro py-2.5 px-5 text-black text-base">
                     BookingCare là Nền tảng Y tế chăm sóc sức khỏe toàn diện
                     hàng đầu Việt Nam kết nối người dùng với trên 200 bệnh viện
                     - phòng khám uy tín, hơn 1,500 bác sĩ chuyên khoa giỏi và
                     hàng nghìn dịch vụ, sản phẩm y tế chất lượng cao.
                 </div>
-                <div className="px-5 text-base bg-bgIntroduction mt-4">
+                <div className="px-5 text-base bg-bgIntroduction mt-4 clinic-detail">
                     <ReactMakedown content={clinicDetail?.description} />
                 </div>
-                {clinicDetail?.introduction && 
-                    <div className="mt-10">
-                        <h3 className="uppercase text-lg font-semibold text-textDate">Giới thiệu chung</h3>
+                {clinicDetail?.Doctors && clinicDetail?.Doctors.length > 0 && (
+                    <div className="flex flex-col gap-y-4 mt-4">
+                        {clinicDetail.Doctors.map((item, index) => (
+                            <Schedule
+                                key={index}
+                                doctor={item}
+                                clinicName={clinicDetail?.name}
+                                clinicAddress={clinicDetail?.address}
+                            />
+                        ))}
+                    </div>
+                )}
+                {clinicDetail?.introduction && (
+                    <div className="mt-10 clinic-detail">
+                        <h3 className="uppercase text-lg font-semibold text-textDate">
+                            Giới thiệu chung
+                        </h3>
                         <div className="text-lg">
-                            <ReactMakedown content={clinicDetail?.introduction} />
+                            <ReactMakedown
+                                content={clinicDetail?.introduction}
+                            />
                         </div>
                     </div>
-                }
-                {clinicDetail?.technique && 
-                    <div className="text-lg mt-10">
-                        <h3 className="uppercase text-lg font-semibold text-textDate">Thế mạnh chuyên môn</h3>
+                )}
+                {clinicDetail?.technique && (
+                    <div className="text-lg mt-10 clinic-detail">
+                        <h3 className="uppercase text-lg font-semibold text-textDate">
+                            Thế mạnh chuyên môn
+                        </h3>
                         <div className="text-lg">
                             <ReactMakedown content={clinicDetail?.technique} />
                         </div>
                     </div>
-                }
-                {clinicDetail?.equipment && 
-                    <div className="text-lg mt-10">
-                        <h3 className="uppercase text-lg font-semibold text-textDate">Trang thiết bị</h3>
+                )}
+                {clinicDetail?.equipment && (
+                    <div className="text-lg mt-10 clinic-detail">
+                        <h3 className="uppercase text-lg font-semibold text-textDate">
+                            Trang thiết bị
+                        </h3>
                         <div className="text-lg">
                             <ReactMakedown content={clinicDetail?.equipment} />
                         </div>
                     </div>
-                }
-                {clinicDetail?.location && 
-                    <div className="text-lg my-10">
-                        <h3 className="uppercase text-lg font-semibold text-textDate">Vị trí</h3>
+                )}
+                {clinicDetail?.location && (
+                    <div className="text-lg my-10 clinic-detail">
+                        <h3 className="uppercase text-lg font-semibold text-textDate">
+                            Vị trí
+                        </h3>
                         <div className="text-lg">
                             <ReactMakedown content={clinicDetail?.location} />
                         </div>
                     </div>
-                }
+                )}
             </div>
             <Footer />
         </main>
