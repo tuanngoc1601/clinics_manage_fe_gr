@@ -89,6 +89,7 @@ const ClinicsPage = () => {
                                     if (clinicByKeys.length === 0) return null;
                                     return (
                                         <ClinicsSectionKey
+                                            key={index}
                                             keyWord={key}
                                             clinicsArr={clinicByKeys}
                                         />

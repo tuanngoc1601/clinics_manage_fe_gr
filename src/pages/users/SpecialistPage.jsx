@@ -18,7 +18,6 @@ const SpecialistPage = () => {
 
     return (
         <main className="w-full min-h-screen flex flex-col justify-start items-center bg-white">
-            {/* <Header /> */}
             <div className="w-full px-10 divide-y">
                 <div className="flex items-center justify-start gap-x-2 my-4 px-2">
                     <Link to={"/"}>
@@ -31,7 +30,7 @@ const SpecialistPage = () => {
                     {specialities &&
                         specialities.length > 0 &&
                         specialities.map((speciality, index) => (
-                            <Link to={"/services/specialities/1"}>
+                            <Link to={`/services/specialities/${speciality?.id}`} key={index}>
                                 <div
                                     key={index}
                                     className="flex flex-col cursor-pointer"

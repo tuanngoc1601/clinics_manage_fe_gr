@@ -14,7 +14,7 @@ const DoctorDetail = () => {
     const [doctorDetail, setDoctorDetail] = useState();
 
     useEffect(() => {
-        const getDoctorDetail = async () => {
+        (async () => {
             try {
                 const res = await doctorService.handleGetDoctorDetailService(
                     doctorId
@@ -23,12 +23,8 @@ const DoctorDetail = () => {
             } catch (err) {
                 console.error("Failed fetching doctor detail", err);
             }
-        };
-
-        getDoctorDetail();
+        })();
     }, []);
-
-    console.log(doctorDetail);
 
     return (
         <main className="w-full min-h-screen flex flex-col justify-start items-center bg-white">
@@ -43,6 +39,26 @@ const DoctorDetail = () => {
                             Khám Chuyên khoa
                         </span>
                     </Link>
+                    <span className="text-textPrimary">/</span>
+                    {doctorDetail?.specialities &&
+                        doctorDetail.specialities.length > 0 &&
+                        doctorDetail.specialities.map((speciality, index) => (
+                            <div key={index}>
+                                <Link
+                                    to={`/services/specialities/${speciality?.id}`}
+                                >
+                                    <span className="text-sm text-textPrimary">
+                                        {speciality?.name}
+                                    </span>
+                                </Link>
+                                {index !==
+                                    doctorDetail.specialities.length - 1 && (
+                                    <span className="text-textPrimary ms-2">
+                                        -
+                                    </span>
+                                )}
+                            </div>
+                        ))}
                 </div>
                 <div className="flex flex-row items-start text-13px justify-start gap-x-4">
                     <img

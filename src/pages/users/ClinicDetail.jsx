@@ -27,7 +27,6 @@ const ClinicDetail = () => {
 
     return (
         <main className="w-full min-h-screen flex flex-col justify-start items-center bg-white">
-            {/* <Header /> */}
             <div
                 style={{ "--image-url": `url(${clinicDetail?.image})` }}
                 className="w-full h-340 bg-[image:var(--image-url)] bg-cover bg-center bg-no-repeat relative"
@@ -80,7 +79,7 @@ const ClinicDetail = () => {
                     <ReactMakedown content={clinicDetail?.description} />
                 </div>
                 {clinicDetail?.Doctors && clinicDetail?.Doctors.length > 0 && (
-                    <div className="flex flex-col gap-y-4 mt-4">
+                    <div className="flex flex-col gap-y-4 my-4">
                         {clinicDetail.Doctors.map((item, index) => (
                             <Schedule
                                 key={index}

@@ -7,3 +7,9 @@ const axiosClient = createAxiosBaseUrl();
 export const handleGetAllSpecialitiesService = () => {
     return axiosClient.get("/api/v1/speciality/get-all-specialities");
 };
+
+export const handleGetSpecialityDetailService = (specialityId) => {
+    return axiosClient.get(
+        `/api/v1/speciality/get-speciality-detail/${specialityId}`
+    );
+};
