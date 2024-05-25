@@ -10,7 +10,10 @@ const Schedule = (props) => {
     return (
         <div className="w-full p-2 flex flex-row divide-x border bg-white shadow-lg rounded-xl py-4">
             <div className="w-1/2 flex flex-row py-2">
-                <Link to={`/doctors/${props?.doctor?.id}`} className="flex-none">
+                <Link
+                    to={`/doctors/${props?.doctor?.id}`}
+                    className="flex-none"
+                >
                     <img
                         src={props?.doctor?.image ?? ""}
                         alt=""

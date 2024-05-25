@@ -21,9 +21,7 @@ const SpecialistDetail = () => {
                 console.log(err);
             }
         })();
-    }, []);
-
-    console.log(specialityDetail);
+    }, [specialityId]);
 
     return (
         <main className="w-full min-h-screen flex flex-col justify-start items-center bg-white">

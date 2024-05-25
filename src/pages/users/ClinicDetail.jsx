@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { clinicService } from "../../services";
 import ReactMakedown from "../../containers/ReactMakedown";
-// import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import Schedule from "../../components/users/Schedule";
 
@@ -11,7 +10,7 @@ const ClinicDetail = () => {
     const [clinicDetail, setClinicDetail] = useState();
 
     useEffect(() => {
-        const getDataClinic = async () => {
+        (async () => {
             try {
                 const res = await clinicService.handleGetClinicDetailService(
                     clinicId
@@ -20,10 +19,8 @@ const ClinicDetail = () => {
             } catch (e) {
                 console.error(e);
             }
-        };
-
-        getDataClinic();
-    }, []);
+        })();
+    }, [clinicId]);
 
     return (
         <main className="w-full min-h-screen flex flex-col justify-start items-center bg-white">

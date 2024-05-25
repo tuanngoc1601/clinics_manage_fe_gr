@@ -24,7 +24,7 @@ const DoctorDetail = () => {
                 console.error("Failed fetching doctor detail", err);
             }
         })();
-    }, []);
+    }, [doctorId]);
 
     return (
         <main className="w-full min-h-screen flex flex-col justify-start items-center bg-white">

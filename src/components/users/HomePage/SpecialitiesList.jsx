@@ -41,16 +41,18 @@ const SpecialistFields = () => {
                     allSpecialities.length > 0 &&
                     allSpecialities.map((speciality, index) => (
                         <SwiperSlide key={index}>
-                            <div className="w-full h-full flex flex-col rounded-2xl border-2 border-boderItem cursor-pointer p-4">
-                                <img
-                                    src={speciality.image}
-                                    alt=""
-                                    className="w-full h-217 block object-cover rounded-3xl"
-                                />
-                                <p className="text-center text-lg text-headingColor font-semibold mt-8 mb-3">
-                                    {speciality.name}
-                                </p>
-                            </div>
+                            <Link to={`services/specialities/${speciality.id}`}>
+                                <div className="w-full h-full flex flex-col rounded-2xl border-2 border-boderItem cursor-pointer p-4">
+                                    <img
+                                        src={speciality.image}
+                                        alt=""
+                                        className="w-full h-217 block object-cover rounded-3xl"
+                                    />
+                                    <p className="text-center text-lg text-headingColor font-semibold mt-8 mb-3">
+                                        {speciality.name}
+                                    </p>
+                                </div>
+                            </Link>
                         </SwiperSlide>
                     ))}
             </Swiper>
