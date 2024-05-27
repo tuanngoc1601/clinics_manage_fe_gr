@@ -7,6 +7,7 @@ import { Provider } from "react-redux";
 import { store, persistor } from "./redux/store";
 import { PersistGate } from 'redux-persist/integration/react';
 import { AnimatePresence } from "framer-motion";
+import ScrollToTop from './hooks/ScrollToTop';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -16,6 +17,7 @@ root.render(
         <BrowserRouter>
           <AnimatePresence>
             <App />
+            <ScrollToTop />
           </AnimatePresence>
         </BrowserRouter>
       </React.StrictMode>

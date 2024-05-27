@@ -1,16 +1,43 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { AiOutlineSchedule } from "react-icons/ai";
 import TimeSchedule from "../TimeSchedule";
-import { FaChevronDown, FaRegHandPointer } from "react-icons/fa6";
-
+import { FaRegHandPointer } from "react-icons/fa6";
+import { formatDate } from "../../../utils/helper";
+import { scheduleService } from "../../../services";
 
 const ScheduleSection = (props) => {
+    const [dateSchedule, setDateSchedule] = useState(formatDate(new Date()));
+    const [scheduleTimes, setScheduleTimes] = useState([]);
+
+    useEffect(() => {
+        (async () => {
+            try {
+                const schedules =
+                    await scheduleService.getScheduleDoctorService(
+                        props?.id,
+                        dateSchedule
+                    );
+                setScheduleTimes(schedules.data.data);
+            } catch (e) {
+                console.error(e);
+            }
+        })();
+    }, [dateSchedule, props?.id]);
+
     return (
         <div className="w-full flex flex-row divide-x mt-4">
             <div className="w-1/2 flex flex-col items-start justify-start">
-                <button className="flex items-center px-4 py-2 border-b text-sm ms-4 text-textDate font-semibold">
-                    Hôm nay - 9/1 <FaChevronDown className="ms-2" />
-                </button>
+                <input
+                    type="date"
+                    id="schedule"
+                    name="schedule"
+                    value={dateSchedule}
+                    max="2099-12-31"
+                    onChange={(e) =>
+                        setDateSchedule(formatDate(e.target.value))
+                    }
+                    className="px-4 py-2 border-b text-sm ms-4 text-textDate font-semibold outline-none"
+                />
                 <p className="flex flex-row items-center justify-center text-sm font-semibold px-4 mt-2 gap-x-2">
                     <span>
                         <AiOutlineSchedule className="text-lg font-semibold" />
@@ -18,14 +45,17 @@ const ScheduleSection = (props) => {
                     LỊCH KHÁM
                 </p>
                 <div className="flex flex-row flex-wrap ps-4 mt-4 gap-2.5">
-                    <TimeSchedule time={"08:30 - 09:00"} />
-                    <TimeSchedule time={"09:00 - 09:30"} />
-                    <TimeSchedule time={"09:30 - 10:00"} />
-                    <TimeSchedule time={"10:00 - 10:30"} />
-                    <TimeSchedule time={"10:30 - 11:00"} />
-                    <TimeSchedule time={"14:00 - 14:30"} />
-                    <TimeSchedule time={"14:30 - 15:00"} />
-                    <TimeSchedule time={"15:00 - 15:30"} />
+                    {!!scheduleTimes.length ? (
+                        scheduleTimes.map((schedule) => (
+                            <TimeSchedule
+                                key={schedule.id}
+                                id={schedule.id}
+                                time={schedule.time.value}
+                            />
+                        ))
+                    ) : (
+                        <p>Không có lịch khám</p>
+                    )}
                 </div>
                 <p className="flex text-xs text-textColor px-4 mt-2">
                     Chọn <FaRegHandPointer className="text-sm mx-1" /> và đặt

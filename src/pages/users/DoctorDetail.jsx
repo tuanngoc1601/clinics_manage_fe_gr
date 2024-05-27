@@ -91,7 +91,7 @@ const DoctorDetail = () => {
                         </div>
                     </div>
                 </div>
-                <ScheduleSection clinic={doctorDetail?.Clinic} />
+                <ScheduleSection id={doctorDetail?.id} clinic={doctorDetail?.Clinic} />
             </div>
             <div className="w-full h-px bg-slate-300 mt-4"></div>
             <div className="w-full flex flex-col py-8 px-14 markdown bg-bgIntro">

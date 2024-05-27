@@ -30,7 +30,7 @@ function App() {
                     element={<SpecialistDetail />}
                 />
                 <Route path="/doctors/:doctorId" element={<DoctorDetail />} />
-                <Route path="/bookings/:bookingId" element={<Booking />} />
+                <Route path="/bookings/:schedule_id" element={<Booking />} />
             </Routes>
         </div>
     );
