@@ -1,5 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import HomePage from "./pages/users/HomePage";
@@ -32,6 +33,11 @@ function App() {
                 <Route path="/doctors/:doctorId" element={<DoctorDetail />} />
                 <Route path="/bookings/:schedule_id" element={<Booking />} />
             </Routes>
+            <Toaster
+                containerClassName="font-casual text-sm font-semibold"
+                position="top-right"
+                gutter={8}
+            />
         </div>
     );
 }
