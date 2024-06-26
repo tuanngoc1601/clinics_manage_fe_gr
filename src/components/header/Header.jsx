@@ -1,12 +1,17 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Time, Support } from "../../assets/images";
 import { FaBars } from "react-icons/fa";
 import { BsSearch } from "react-icons/bs";
 import { Logo } from "../../assets/images";
+import { useDispatch } from "react-redux";
+import { logoutUser } from "../../redux/requests/authRequestApi";
 
 const Header = () => {
     const location = useLocation();
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
     return (
         <header className="w-full h-78 backdrop-blur-md flex items-center justify-between bg-primary">
             <div className="w-full flex flex-row items-center justify-between px-8">
@@ -69,7 +74,7 @@ const Header = () => {
                                 Lịch hẹn
                             </span>
                         </div>
-                        <div className="flex flex-col justify-center items-center cursor-pointer">
+                        <div className="flex flex-col justify-center items-center cursor-pointer" onClick={() => logoutUser(dispatch, navigate)}>
                             <img src={Support} alt="" className="w-26 h-26" />
                             <span className="text-sm text-textPrimary font-semibold leading-6">
                                 Hỗ trợ

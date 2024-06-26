@@ -40,6 +40,7 @@ const BookingForm = ({ yourSelf, schedule_id }) => {
         const { scheduler_name, scheduler_phone, ...formData } = bookingData;
         const data = {
             user_id: currentUser?.id,
+            email: currentUser?.email,
             schedule_id: schedule_id,
             your_self: yourSelf === "0" ? true : false,
             ...formData,
