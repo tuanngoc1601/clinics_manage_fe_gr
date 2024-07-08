@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
@@ -13,9 +13,11 @@ import Header from "./components/header/Header";
 import DoctorDetail from "./pages/users/DoctorDetail";
 
 function App() {
+    const location = useLocation();
     return (
         <div className="w-full min-h-screen h-auto flex flex-col items-center justify-center">
-            <Header />
+            {location.pathname !== "/login" &&
+                location.pathname !== "/sign-up" && <Header />}
             <Routes>
                 <Route path="/login" element={<Login />} />
                 <Route path="/sign-up" element={<SignUp />} />

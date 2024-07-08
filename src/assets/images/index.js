@@ -1,4 +1,5 @@
-export { default as Logo } from "./logo.png";
+// export { default as Logo } from "./logo.png";
+export { default as Logo } from "./Logo";
 export { default as Time } from "./time.png";
 export { default as Support } from "./support.png";
 export { default as Slider1 } from "./slider/slider1.png";

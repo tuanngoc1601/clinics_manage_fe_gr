@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { clinicRequestApi } from "../../redux/requests";
-// import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import ClinicsSectionKey from "../../components/users/clinics/ClinicsSectionKey";
 import { IoMdHome } from "react-icons/io";
@@ -47,7 +46,6 @@ const ClinicsPage = () => {
 
     return (
         <main className="w-full min-h-screen flex flex-col justify-start items-center bg-white">
-            {/* <Header /> */}
             <div className="w-full px-10">
                 <div className="flex items-center justify-start gap-x-2 my-4 px-2">
                     <Link to={"/"}>
@@ -69,16 +67,6 @@ const ClinicsPage = () => {
                         </div>
                     </div>
                     <div className="w-full mt-8">
-                        <div className="w-full flex flex-row items-center justify-between mt-4">
-                            {keyWords.map((key, index) => (
-                                <div
-                                    key={index}
-                                    className="border px-3 cursor-pointer font-semibold"
-                                >
-                                    {key}
-                                </div>
-                            ))}
-                        </div>
                         <div className="w-full flex flex-col gap-2">
                             {listClinics &&
                                 listClinics.length > 0 &&

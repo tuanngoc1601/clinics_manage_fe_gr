@@ -67,7 +67,7 @@ const ClinicDetail = () => {
             </div>
             <div className="w-11/12 flex flex-col mt-24">
                 <div className="bg-bgIntro py-2.5 px-5 text-black text-base">
-                    BookingCare là Nền tảng Y tế chăm sóc sức khỏe toàn diện
+                    Health Grades là Nền tảng Y tế chăm sóc sức khỏe toàn diện
                     hàng đầu Việt Nam kết nối người dùng với trên 200 bệnh viện
                     - phòng khám uy tín, hơn 1,500 bác sĩ chuyên khoa giỏi và
                     hàng nghìn dịch vụ, sản phẩm y tế chất lượng cao.

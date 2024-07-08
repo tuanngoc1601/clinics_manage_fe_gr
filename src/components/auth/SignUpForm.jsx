@@ -37,7 +37,7 @@ const SignUpForm = () => {
             onSubmit={handleSubmit}
         >
             <h1 className="uppercase font-bold text-2xl text-textColor tracking-wide">
-                Sign up in Booking Care
+                Sign up in Health Grades
             </h1>
             <div className="grid grid-cols-2 gap-2">
                 <div className="flex flex-col items-start justify-center gap-2 bg-transparent w-full px-4 py-1">

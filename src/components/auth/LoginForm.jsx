@@ -31,7 +31,7 @@ const LoginForm = () => {
             onSubmit={handleSubmit}
         >
             <h1 className="uppercase font-bold text-2xl text-textColor tracking-wide">
-                Login in Booking Care
+                Login in Health Grades
             </h1>
             <div className="flex flex-col items-start justify-center gap-2 bg-transparent w-full px-4 py-2">
                 <label>Email</label>

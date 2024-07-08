@@ -19,7 +19,7 @@ const Footer = () => {
                 <div className="flex flex-row pb-4">
                     <div className="w-2/5">
                         <p className="text-sm font-semibold my-1">
-                            Công ty Cổ phần Công nghệ BookingCare
+                            Công ty Cổ phần Công nghệ Health Grades
                         </p>
                         <p className="flex flex-row items-start leading-6 text-sm font-normal my-1 gap-1">
                             <span className="pt-2">
@@ -45,7 +45,7 @@ const Footer = () => {
                             <span>
                                 <MdMailOutline className="text-md" />
                             </span>
-                            support@bookingcare.vn (7h - 18h)
+                            support@healthgrades.vn (7h - 18h)
                         </p>
                         <p className="text-sm font-semibold my-1">
                             Văn phòng tại TP Hồ Chí Minh
@@ -152,7 +152,7 @@ const Footer = () => {
                     <span className="px-2">
                         <ImMobile />
                     </span>
-                    Tải ứng dụng BookingCare cho điện thoại hoặc máy tính
+                    Tải ứng dụng Health Grades cho điện thoại hoặc máy tính
                     bảng:&nbsp;
                     <span className="text-textPrimary">Android</span>
                     <span className="px-1"> - </span>
@@ -162,7 +162,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className="flex flex-row justify-between items-start px-12 py-6 bg-bgFooterMedia">
-                <span className="text-xs text-white">© 2024 BookingCare.</span>
+                <span className="text-xs text-white">© 2024 - DATN - Health Grades.</span>
                 <div className="flex flex-row justify-end items-start">
                     <a
                         href="https://www.tiktok.com/@songkhoesuotdoi"
@@ -220,7 +220,7 @@ const Footer = () => {
                         </svg>
                     </a>
                     <a
-                        href="https://www.facebook.com/bookingcare"
+                        href="https://www.facebook.com/healthgrades"
                         dir="auto"
                         className="ml-2 mt-2 h-8 w-8"
                     >

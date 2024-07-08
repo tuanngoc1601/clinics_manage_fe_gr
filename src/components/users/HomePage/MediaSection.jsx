@@ -13,7 +13,7 @@ const MediaSection = () => {
     return (
         <div className="w-full flex flex-col bg-bgMedia bg-repeat bg-cover bg-center px-10 my-6">
             <h2 className="text-3xl text-headingColor font-semibold text-center py-10">
-                Truyền thông nói về BookingCare
+                Truyền thông nói về Health Grades
             </h2>
             <div className="grid grid-cols-2 gap-x-10 mb-12">
                 <div className="w-full">
@@ -21,7 +21,7 @@ const MediaSection = () => {
                         width="100%"
                         height="332"
                         src="https://www.youtube.com/embed/FyDQljKtWnI?si=Tg9WmGy0VQon1CBi"
-                        title="CÀ PHÊ KHỞI NGHIỆP VTV1 - BOOKINGCARE - HỆ THỐNG ĐẶT LỊCH KHÁM TRỰC TUYẾN"
+                        title="CÀ PHÊ KHỞI NGHIỆP VTV1 - HEALTH GRADES - HỆ THỐNG ĐẶT LỊCH KHÁM TRỰC TUYẾN"
                         frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowFullScreen
