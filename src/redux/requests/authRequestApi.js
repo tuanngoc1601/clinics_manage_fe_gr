@@ -26,7 +26,7 @@ export const loginUser = async (user, dispatch, navigate) => {
 };
 
 export const registerUser = async (user, dispatch, navigate) => {
-    dispatch(registerStart());
+dispatch(registerStart());
     try {
         await authService.handleRegisterService(user);
         dispatch(registerSuccess());

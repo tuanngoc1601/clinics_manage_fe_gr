@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { clinicRequestApi } from "../../redux/requests";
@@ -39,6 +39,23 @@ const ClinicsPage = () => {
     ];
     const dispatch = useDispatch();
     const listClinics = useSelector((state) => state.clinic.clinics.data);
+    const [clinics, setClinics] = useState(listClinics);
+    const [searchTerm, setSearchTerm] = useState("");
+
+    const handleOnchange = (e) => {
+        setSearchTerm(e.target.value);
+    };
+
+    useEffect(() => {
+        if (!searchTerm) {
+            setClinics(listClinics);
+            return;
+        }
+        const filterClinics = listClinics.filter((item) =>
+            item.name.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+        setClinics(filterClinics);
+    }, [searchTerm, setClinics]);
 
     useEffect(() => {
         clinicRequestApi.getAllClinics(dispatch);
@@ -61,6 +78,8 @@ const ClinicsPage = () => {
                             <input
                                 type="text"
                                 placeholder="Tìm kiếm"
+                                value={searchTerm}
+                                onChange={handleOnchange}
                                 className="w-full outline-none border-0 bg-transparent px-2 py-2"
                             />
                             <BsSearch className="flex-none text-xl cursor-pointer" />
@@ -68,10 +87,10 @@ const ClinicsPage = () => {
                     </div>
                     <div className="w-full mt-8">
                         <div className="w-full flex flex-col gap-2">
-                            {listClinics &&
-                                listClinics.length > 0 &&
+                            {clinics &&
+                                clinics.length > 0 &&
                                 keyWords.map((key, index) => {
-                                    const clinicByKeys = listClinics.filter(
+                                    const clinicByKeys = clinics.filter(
                                         (clinic) => clinic.keyWord === key
                                     );
                                     if (clinicByKeys.length === 0) return null;
