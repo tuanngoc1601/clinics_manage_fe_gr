@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { motion } from "framer-motion";
 import { authRequestApi } from "../../redux/requests";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import toast from "react-hot-toast";
 
 const SignUpForm = () => {
     const [formData, setFormData] = React.useState({
@@ -28,6 +29,26 @@ const SignUpForm = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        if (
+            !formData.email ||
+            !formData.firstName ||
+            !formData.lastName ||
+            !formData.address ||
+            !formData.phoneNumber ||
+            !formData.gender ||
+            !formData.password ||
+            !formData.confirmPassword
+        ) {
+            toast.error("Vui lòng nhập đầy đủ thông tin!");
+        }
+        if(formData.password.length < 6) {
+            toast.error("Mật khẩu tối thiểu 6 kí tư!");
+        }
+
+        if(formData.password !== formData.confirmPassword) {
+            toast.error("Mật khẩu xác nhận không đúng!");
+        }
+
         authRequestApi.registerUser(formData, dispatch, navigate);
     };
 

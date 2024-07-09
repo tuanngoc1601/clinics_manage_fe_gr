@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { motion } from "framer-motion";
 import { authRequestApi } from "../../redux/requests";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import toast from "react-hot-toast";
 
 const LoginForm = () => {
     const [formData, setFormData] = useState({
@@ -22,6 +23,10 @@ const LoginForm = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        if (formData.password.length < 6) {
+            toast.error("Mật khẩu tối thiểu 6 kí tự!");
+            return;
+        }
         authRequestApi.loginUser(formData, dispatch, navigate);
     };
 
