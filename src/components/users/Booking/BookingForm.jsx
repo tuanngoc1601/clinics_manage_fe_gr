@@ -54,6 +54,7 @@ const BookingForm = ({ yourSelf, schedule_id }) => {
 
         if (response.status === 201) {
             toast.success("Booking schedule created successfully!");
+            navigate("/");
         } else {
             toast.error("Schedule is booked!");
         }
